@@ -49,9 +49,16 @@ Usage:
     EOT
     ~/.local/bin/chargetray &
 
+## Tests
+
+    cmake -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build
+    ctest --test-dir build --output-on-failure
+
+Run these from `chargetray/`. The suite covers `runAsync`, the non-blocking process runner the tray uses. It is built only when Qt6 Test is found.
+
 ## Versions
 
-Both parts are at v1.0.0 and are versioned independently. `chargetray --version` reads it from `project(... VERSION ...)` in `chargetray/CMakeLists.txt`; `chargemode version` reads the `VERSION` variable at the top of `scripts/chargemode`. Bump both when the interface between them changes (the helper subcommands the tray calls).
+The tray is at v1.1.0 and the helper at v1.0.0; they are versioned independently. `chargetray --version` reads it from `project(... VERSION ...)` in `chargetray/CMakeLists.txt`; `chargemode version` reads the `VERSION` variable at the top of `scripts/chargemode`. Bump both when the interface between them changes (the helper subcommands the tray calls).
 
 ## License
 
