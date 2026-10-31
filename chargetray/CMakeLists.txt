@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.21)
+project(chargetray VERSION 1.0.0 LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+find_package(Qt6 REQUIRED COMPONENTS Widgets)
+add_executable(chargetray chargetray.cpp)
+target_link_libraries(chargetray PRIVATE Qt6::Widgets)
+target_compile_definitions(chargetray PRIVATE CHARGETRAY_VERSION="${PROJECT_VERSION}")
